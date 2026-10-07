@@ -1,5 +1,18 @@
 # LANI LOUD — сайт музыкального проекта
 
+**Сайт опубликован:** https://rveabnelit.github.io/
+**Репозиторий:** https://github.com/rveabnelit/rveabnelit.github.io (публичный, GitHub Pages, HTTPS автоматически)
+
+Обновление сайта после правок — одной командой:
+
+```powershell
+python design\publish.py "что поменял"
+```
+
+Скрипт пересоберёт архив, закоммитит изменения и отправит на GitHub. Через минуту-две правки появятся на сайте.
+
+---
+
 Статический сайт: **HTML + CSS + JS, без сборки и без зависимостей.**
 Открывается двойным щелчком по `index.html`, кладётся на любой хостинг как есть.
 
@@ -101,7 +114,12 @@ python design\set_domain.py laniloud.ru   # подставляет ваш дом
 
 ## 6. Как выложить
 
-1. **Netlify Drop** — перетащите папку `dist` на https://app.netlify.com/drop.
+**Сайт уже выложен на GitHub Pages** — см. шапку файла. Дальше обновления идут через `python design\publish.py "описание правок"`.
+
+Если позже понадобится переехать на свой хостинг или поднять копию:
+
+1. **Свой домен к этому же репозиторию** — в настройках репозитория Pages → Custom domain, у регистратора прописать CNAME на `rveabnelit.github.io`. Сайт остаётся на GitHub, но открывается по вашему адресу.
+2. **Netlify Drop** — перетащите папку `dist` на https://app.netlify.com/drop.
 2. **Vercel** — `vercel` из папки проекта.
 3. **GitHub Pages** — Settings → Pages → Deploy from branch → `main` / `root`.
 4. **Обычный хостинг (FTP/cPanel)** — залейте содержимое папки в `public_html`.
