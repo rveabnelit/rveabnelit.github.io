@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LANI LOUD — какие-то песни для каких-то людей</title>
+<meta name="description" content="Официальный сайт LANI LOUD. Скоро — новый сингл «Август». Слушать «17», «Я улетаю», «Свет пронести» на Spotify, Apple Music, Яндекс Музыке и VK Музыке, смотреть клипы на YouTube, пресс-релизы о вышедших и грядущих песнях.">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="https://laniloud.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LANI LOUD">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="LANI LOUD — какие-то песни для каких-то людей">
+<meta property="og:description" content="Скоро новый сингл «Август». Слушать на всех площадках, клипы, пресс-релизы.">
+<meta property="og:image" content="https://laniloud.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://laniloud.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://laniloud.com/assets/img/og-image.jpg">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.jpg">
+
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/oswald-400-cyrillic.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-300-cyrillic.woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero.jpg" media="(min-width: 781px)">
+<link rel="preload" as="image" href="assets/img/hero-mobile.jpg" media="(max-width: 780px)">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- класс js ставим сразу, чтобы блоки не мигали перед анимацией появления;
+     если скрипты не загрузятся, через 2.5 с класс снимается и весь контент виден -->
+<script>
+  document.documentElement.className += ' js';
+  setTimeout(function () {
+    if (!window.__laniLoudReady) document.documentElement.classList.remove('js');
+  }, 2500);
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<!-- ============ SVG-СПРАЙТ ИКОНОК ============ -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-vk" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13.16 17.3c-5.2 0-8.5-3.65-8.63-9.7h2.7c.1 4.44 2.1 6.32 3.66 6.7V7.6h2.55v3.83c1.53-.17 3.13-1.94 3.66-3.83h2.53a7.3 7.3 0 0 1-3.3 4.7 7.5 7.5 0 0 1 3.62 4.9h-2.8c-.5-1.83-1.95-3.25-3.71-3.45v3.45h-.28Z"/>
+  </symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M21.7 3.4 2.9 10.6c-1.1.44-1.1 1.1-.2 1.38l4.8 1.5 1.85 5.7c.23.63.4.87 1 .87.45 0 .65-.2.9-.45l2.2-2.15 4.6 3.4c.85.47 1.45.23 1.66-.78l3-14.2c.3-1.2-.46-1.75-1.4-1.32Zm-3.2 3.3-6.9 6.25-.27 3.02-1.34-4.13 8.5-5.14Z"/>
+  </symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M22.5 7.6a2.75 2.75 0 0 0-1.94-1.95C18.8 5.15 12 5.15 12 5.15s-6.8 0-8.56.5A2.75 2.75 0 0 0 1.5 7.6C1 9.37 1 12 1 12s0 2.63.5 4.4a2.75 2.75 0 0 0 1.94 1.95c1.76.5 8.56.5 8.56.5s6.8 0 8.56-.5a2.75 2.75 0 0 0 1.94-1.95C23 14.63 23 12 23 12s0-2.63-.5-4.4ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/>
+  </symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.4" d="M3 12h17M14 5.5 20.5 12 14 18.5"/>
+  </symbol>
+  <symbol id="i-play" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M8 5.2 19 12 8 18.8V5.2Z"/>
+  </symbol>
+  <symbol id="i-download" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.4" d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.4" d="M5 5l14 14M19 5 5 19"/>
+  </symbol>
+  <symbol id="i-spotify" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.75.75 0 0 1-1.04.25c-2.85-1.75-6.44-2.14-10.66-1.17a.75.75 0 1 1-.33-1.46c4.62-1.06 8.6-.6 11.78 1.34.36.22.47.69.25 1.04Zm1.24-2.76a.94.94 0 0 1-1.29.31c-3.26-2-8.24-2.6-12.1-1.42a.94.94 0 1 1-.55-1.8c4.4-1.33 9.89-.67 13.63 1.62.44.27.58.85.31 1.29Zm.11-2.88C14.1 8.44 7.9 8.23 4.85 9.16a1.12 1.12 0 1 1-.65-2.15c3.5-1.06 10.35-.82 14.4 1.58a1.12 1.12 0 0 1-1.15 1.93Z"/>
+  </symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M16.2 12.7c0-2.2 1.8-3.3 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.7.8-3.3.8-.7 0-1.7-.8-2.8-.8C7.1 7.7 5.6 8.6 4.8 10c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.6-.9.9-1.4 1.3-2.4-2.6-1-3.5-3.4-3.5-4.5ZM14.3 6.2c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3Z"/>
+  </symbol>
+  <symbol id="i-yandex" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9.3" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <path fill="currentColor" d="M13.5 6.6h-1.8c-1.85 0-2.95 1-2.95 2.55 0 1.25.6 2.05 1.8 2.7l1.35.75-2.55 4.8h1.85l2.35-4.55.75.4v4.15h1.6V6.6Zm-1.55 5.35-.85-.5c-.8-.45-1.15-.85-1.15-1.6 0-.8.5-1.25 1.45-1.25h.55v3.35Z"/>
+  </symbol>
+  <symbol id="i-link" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.5" d="M10.6 13.4a3.6 3.6 0 0 0 5.1 0l2.9-2.9a3.6 3.6 0 0 0-5.1-5.1l-1.2 1.2"/>
+    <path fill="none" stroke="currentColor" stroke-width="1.5" d="M13.4 10.6a3.6 3.6 0 0 0-5.1 0l-2.9 2.9a3.6 3.6 0 0 0 5.1 5.1l1.2-1.2"/>
+  </symbol>
+  <symbol id="i-listen" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.6" d="M4.5 14.5v-2.5a7.5 7.5 0 0 1 15 0v2.5"/>
+    <rect x="2.6" y="13.6" width="4.4" height="7" rx="2.1" fill="currentColor"/>
+    <rect x="17" y="13.6" width="4.4" height="7" rx="2.1" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-skeleton" viewBox="0 0 120 190">
+    <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round">
+      <ellipse cx="60" cy="30" rx="21" ry="24"/>
+      <path d="M48 26h9M63 26h9M54 40h12M50 47h20"/>
+      <path d="M60 54v10M46 64h28M50 78h20M52 92h16"/>
+      <path d="M46 64 38 96M74 64l8 32M50 78l-8 26M70 78l8 26"/>
+      <path d="M60 92v30M48 122h24M52 134h16M52 146h16"/>
+      <path d="M60 122 46 176M60 122l14 54M46 176h-8M74 176h8"/>
+      <path d="M60 32c-6 4-6 10 0 14"/>
+      <path d="M78 44l14-10M14 60l14-8"/>
+    </g>
+  </symbol>
+  <!-- «выцарапанный» контур: чуть смещает пиксели текста, как будто написали от руки по фото -->
+  <filter id="scratched" x="-15%" y="-25%" width="130%" height="150%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="11" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.1"
+                       xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ============ ШАПКА ============ -->
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <ul class="socials" aria-label="Соцсети">
+      <li><a href="https://vk.ru/laniloud" target="_blank" rel="me noopener" aria-label="VK"><svg class="ico"><use href="#i-vk"></use></svg></a></li>
+      <li><a href="https://t.me/laniloud_tg" target="_blank" rel="me noopener" aria-label="Telegram"><svg class="ico"><use href="#i-tg"></use></svg></a></li>
+      <li><a href="https://www.youtube.com/@laniloud" target="_blank" rel="me noopener" aria-label="YouTube"><svg class="ico"><use href="#i-yt"></use></svg></a></li>
+      <li><a href="https://www.instagram.com/laniloud/" target="_blank" rel="me noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"></use></svg></a></li>
+    </ul>
+
+    <a class="header-logo" href="#top" aria-label="LANI LOUD — на главную">
+      <img src="assets/img/logo.png" alt="LANI LOUD" width="1200" height="365">
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#music">Музыка</a></li>
+        <li><a href="#video">Видео</a></li>
+        <li><a href="#press">Пресс-релизы</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="burger-line"></span><span class="burger-line"></span>
+      <span class="sr-only">Меню</span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ МОБИЛЬНОЕ МЕНЮ ============ -->
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="Мобильная навигация">
+    <ul>
+      <li><a href="#music">Музыка</a></li>
+      <li><a href="#video">Видео</a></li>
+      <li><a href="#press">Пресс-релизы</a></li>
+      <li><a href="#photo">Фото</a></li>
+    </ul>
+  </nav>
+  <ul class="socials mobile-socials" aria-label="Соцсети">
+    <li><a href="https://vk.ru/laniloud" target="_blank" rel="me noopener" aria-label="VK"><svg class="ico"><use href="#i-vk"></use></svg></a></li>
+    <li><a href="https://t.me/laniloud_tg" target="_blank" rel="me noopener" aria-label="Telegram"><svg class="ico"><use href="#i-tg"></use></svg></a></li>
+    <li><a href="https://www.youtube.com/@laniloud" target="_blank" rel="me noopener" aria-label="YouTube"><svg class="ico"><use href="#i-yt"></use></svg></a></li>
+    <li><a href="https://www.instagram.com/laniloud/" target="_blank" rel="me noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"></use></svg></a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-bg" role="img" aria-label="LANI LOUD с гитарой на крыше, ночной город"></div>
+    <!-- Видео-баннер в запасе: чтобы вернуть его в hero, раскомментируйте блок ниже
+         (файл assets/video/hero-banner.mp4 и постер assets/img/hero-poster.jpg на месте).
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata"
+           poster="assets/img/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+      <source src="assets/video/hero-banner.mp4" type="video/mp4">
+    </video>
+    -->
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="hero-logo">
+      <img src="assets/img/logo.png" alt="LANI LOUD" width="1200" height="365">
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title" id="hero-title">
+          Какие-то песни<br>для каких-то людей.
+        </h1>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#music">Слушать музыку <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg></a>
+          <a class="btn btn-ghost" href="#video">Смотреть видео <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg></a>
+        </div>
+      </div>
+
+      <figure class="hero-quote">
+        <blockquote>
+          <p>Пока со мной<br>мои песни,<br>я неуязвим для<br>злости и лести.</p>
+        </blockquote>
+        <figcaption>17</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ МУЗЫКА ============ -->
+  <section class="section music" id="music" aria-labelledby="music-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title" id="music-title">Музыка</h2>
+        <span class="section-note">Нажмите на релиз, чтобы выбрать площадку</span>
+      </header>
+    </div>
+
+    <div class="wrap">
+      <ul class="track-grid" id="track-grid">
+        <!-- Ссылки площадок у каждого релиза: data-spotify, data-apple, data-yandex,
+             data-vk, data-youtube (если есть клип), data-bandlink (все площадки сразу) -->
+
+        <!-- грядущий релиз ставим первым, чтобы его сразу видели -->
+        <li class="track reveal" data-track="Август" data-duration="" data-type="Сингл / готовится к выходу">
+          <button class="track-card" type="button" aria-label="«Август»: когда выйдет и где слушать">
+            <span class="track-cover"><span class="track-badge">Скоро</span><img src="assets/img/cover-04.jpg" alt="Обложка будущего сингла «Август»" loading="lazy" width="760" height="760"></span>
+            <span class="track-meta"><span class="track-name">Август</span><span class="track-time">скоро</span></span>
+          </button>
+        </li>
+        <li class="track reveal" data-track="17" data-duration="2:14" data-type="Сингл / 2026"
+            data-spotify="https://open.spotify.com/album/0VfAzkrqRdvfRVneUWTE5M"
+            data-apple="https://music.apple.com/us/album/17-single/6808683986"
+            data-yandex="https://music.yandex.ru/album/26507049"
+            data-vk="https://music.vk.com/link/1vwnC"
+            data-bandlink="https://band.link/PPYpE">
+          <button class="track-card" type="button" aria-label="«17»: где слушать">
+            <span class="track-cover"><img src="assets/img/cover-01.jpg" alt="Обложка сингла «17»" loading="lazy" width="760" height="760"></span>
+            <span class="track-meta"><span class="track-name">17</span><span class="track-time">2:14</span></span>
+          </button>
+        </li>
+        <li class="track reveal" data-track="Свет пронести" data-duration="3:04" data-type="Сингл / 2025"
+            data-spotify="https://open.spotify.com/album/0Anfx8wPIja5qrxSFHohI1"
+            data-apple="https://music.apple.com/us/album/%D1%81%D0%B2%D0%B5%D1%82-%D0%BF%D1%80%D0%BE%D0%BD%D0%B5%D1%81%D1%82%D0%B8-single/1811153710"
+            data-yandex="https://music.yandex.ru/album/36456943"
+            data-vk="https://music.vk.com/link/ckdWo"
+            data-youtube="https://www.youtube.com/watch?v=R3nki-nZ7AA"
+            data-bandlink="https://band.link/nLfDr">
+          <button class="track-card" type="button" aria-label="«Свет пронести»: где слушать и клип">
+            <span class="track-cover"><img src="assets/img/cover-03.jpg" alt="Обложка сингла «Свет пронести»" loading="lazy" width="640" height="640"></span>
+            <span class="track-meta"><span class="track-name">Свет пронести</span><span class="track-time">3:04</span></span>
+          </button>
+        </li>
+        <li class="track reveal" data-track="Я улетаю" data-duration="2:33" data-type="Сингл / 2024"
+            data-spotify="https://open.spotify.com/album/6SXzouhXE7NWZcPvRJ8Y31"
+            data-apple="https://music.apple.com/ru/album/%D1%8F-%D1%83%D0%BB%D0%B5%D1%82%D0%B0%D1%8E-single/1759431366"
+            data-yandex="https://music.yandex.ru/album/32512436"
+            data-vk="https://music.vk.com/link/2K4DV"
+            data-bandlink="https://band.link/sen8W">
+          <button class="track-card" type="button" aria-label="«Я улетаю»: где слушать">
+            <span class="track-cover"><img src="assets/img/cover-02.jpg" alt="Обложка сингла «Я улетаю»" loading="lazy" width="760" height="760"></span>
+            <span class="track-meta"><span class="track-name">Я улетаю</span><span class="track-time">2:33</span></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="wrap">
+      <div class="player-bar">
+        <button class="player-btn" id="player-play" type="button" aria-label="Выбрать площадку для прослушивания">
+          <svg class="ico"><use href="#i-play"></use></svg>
+        </button>
+        <div class="waveform" id="waveform" aria-hidden="true"></div>
+        <span class="player-label">Слушать:</span>
+        <ul class="platform-inline">
+          <li><a href="https://band.link/PPYpE" target="_blank" rel="noopener"><svg class="ico"><use href="#i-listen"></use></svg><span>«17»</span></a></li>
+          <li><a href="https://band.link/nLfDr" target="_blank" rel="noopener"><svg class="ico"><use href="#i-listen"></use></svg><span>«Свет пронести»</span></a></li>
+          <li><a href="https://band.link/sen8W" target="_blank" rel="noopener"><svg class="ico"><use href="#i-listen"></use></svg><span>«Я улетаю»</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Профили артиста на площадках -->
+      <div class="artist-links">
+        <span class="player-label">Профиль артиста:</span>
+        <ul>
+          <li><a href="https://open.spotify.com/artist/3pFcnRwkA7zcBAzo29UafF" target="_blank" rel="noopener"><svg class="ico"><use href="#i-spotify"></use></svg>Spotify</a></li>
+          <li><a href="https://music.apple.com/us/artist/lani-loud/1695722357" target="_blank" rel="noopener"><svg class="ico"><use href="#i-apple"></use></svg>Apple Music</a></li>
+          <li><a href="https://music.yandex.ru/artist/6034328" target="_blank" rel="noopener"><svg class="ico"><use href="#i-yandex"></use></svg>Яндекс Музыка</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ВИДЕО ============ -->
+  <section class="section video" id="video" aria-labelledby="video-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title" id="video-title">Видео</h2>
+        <a class="section-link" href="https://www.youtube.com/@laniloud" target="_blank" rel="noopener">
+          Все клипы на YouTube <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg>
+        </a>
+      </header>
+    </div>
+
+    <div class="wrap">
+      <!-- Клип один: по клику постер заменяется встроенным плеером YouTube -->
+      <div class="video-featured reveal">
+        <button class="video-embed" type="button" data-video-id="R3nki-nZ7AA"
+                aria-label="Смотреть клип «Свет пронести» на YouTube">
+          <img src="assets/img/video-clip.jpg" alt="Кадр из клипа «Свет пронести»" width="1280" height="720">
+          <span class="video-play" aria-hidden="true"><svg class="ico"><use href="#i-play"></use></svg></span>
+        </button>
+        <div class="video-caption">
+          <h3 class="video-name">Свет пронести</h3>
+          <p class="video-type">Клип · 2025</p>
+          <p class="video-text">Официальный клип на сингл «Свет пронести».</p>
+          <a class="text-link" href="https://www.youtube.com/watch?v=R3nki-nZ7AA" target="_blank" rel="noopener">
+            Смотреть на YouTube <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg>
+          </a>
+          <p class="video-note">Следующие клипы — в работе. Подписывайтесь на канал, чтобы не пропустить премьеру.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ПРЕСС-РЕЛИЗЫ ============ -->
+  <section class="section press" id="press" aria-labelledby="press-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 class="section-title" id="press-title">Пресс-релизы</h2>
+        <a class="section-link" href="assets/press/lani-loud-press-kit.zip" download>
+          Пресс-кит (EPK) скачать ZIP <svg class="ico ico-arrow"><use href="#i-download"></use></svg>
+        </a>
+      </header>
+    </div>
+
+    <div class="wrap">
+      <ul class="press-grid">
+        <!-- Грядущий релиз — первым: когда трек выйдет, поменяйте класс is-soon на обычный,
+             бейдж на badge-out с текстом «Вышел» и впишите дату, описание и ссылку -->
+        <li class="press-card is-soon reveal">
+          <img src="assets/img/press-04.jpg" alt="" loading="lazy" width="420" height="420">
+          <div class="press-body">
+            <span class="badge badge-soon">Скоро</span>
+            <h3 class="press-title">Август</h3>
+            <p class="press-meta">Сингл / готовится к выходу</p>
+            <p class="press-text">Анонс готовится: здесь появятся дата премьеры и описание песни.</p>
+            <span class="text-link is-muted">Премьера впереди</span>
+          </div>
+        </li>
+        <li class="press-card reveal">
+          <img src="assets/img/press-01.jpg" alt="" loading="lazy" width="420" height="420">
+          <div class="press-body">
+            <span class="badge badge-out">Вышел</span>
+            <h3 class="press-title">17</h3>
+            <p class="press-meta">Сингл · 30 августа 2026</p>
+            <p class="press-text">Песня о времени, когда кажется, что всё против тебя, но музыка становится опорой.</p>
+            <a class="text-link" href="https://band.link/PPYpE" target="_blank" rel="noopener">Слушать <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </li>
+        <li class="press-card reveal">
+          <img src="assets/img/press-03.jpg" alt="" loading="lazy" width="420" height="420">
+          <div class="press-body">
+            <span class="badge badge-out">Вышел</span>
+            <h3 class="press-title">Свет пронести</h3>
+            <p class="press-meta">Сингл · 16 мая 2025</p>
+            <p class="press-text">О поиске света в самых тёмных местах. На песню снят клип.</p>
+            <a class="text-link" href="https://band.link/nLfDr" target="_blank" rel="noopener">Слушать <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </li>
+        <li class="press-card reveal">
+          <img src="assets/img/press-02.jpg" alt="" loading="lazy" width="420" height="420">
+          <div class="press-body">
+            <span class="badge badge-out">Вышел</span>
+            <h3 class="press-title">Я улетаю</h3>
+            <p class="press-meta">Сингл · 9 августа 2024</p>
+            <p class="press-text">История о потере связи, о чувствах, которые не находят ответа.</p>
+            <a class="text-link" href="https://band.link/sen8W" target="_blank" rel="noopener">Слушать <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ ФОТО-ПОЛОСА ============ -->
+  <section class="photo-strip" id="photo" aria-label="Фотографии">
+    <h2 class="photo-label section-title">Фото</h2>
+    <ul class="photo-row">
+      <li><img src="assets/img/photo-01.jpg" alt="LANI LOUD на сцене в тёплом свете" loading="lazy" width="750" height="600"></li>
+      <li><img src="assets/img/photo-02.jpg" alt="Чёрно-белый студийный портрет" loading="lazy" width="900" height="720"></li>
+      <li><img src="assets/img/photo-03.jpg" alt="Студийный портрет в свитере" loading="lazy" width="900" height="720"></li>
+      <li><img src="assets/img/photo-04.jpg" alt="С книгой и в наушниках у дороги, с жёлтым чемоданом" loading="lazy" width="750" height="600"></li>
+      <li><img src="assets/img/photo-05.jpg" alt="Портрет: свитер закрывает лицо" loading="lazy" width="853" height="682"></li>
+    </ul>
+  </section>
+
+</main>
+
+<!-- ============ ФУТЕР ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+
+    <div class="footer-col footer-brand">
+      <img class="footer-logo" src="assets/img/logo.png" alt="LANI LOUD" width="1200" height="365" loading="lazy">
+      <p class="footer-note">Какие-то песни для каких-то людей.</p>
+
+      <ul class="socials footer-socials" aria-label="Соцсети">
+        <li><a href="https://vk.ru/laniloud" target="_blank" rel="me noopener" aria-label="VK"><svg class="ico"><use href="#i-vk"></use></svg></a></li>
+        <li><a href="https://t.me/laniloud_tg" target="_blank" rel="me noopener" aria-label="Telegram"><svg class="ico"><use href="#i-tg"></use></svg></a></li>
+        <li><a href="https://www.youtube.com/@laniloud" target="_blank" rel="me noopener" aria-label="YouTube"><svg class="ico"><use href="#i-yt"></use></svg></a></li>
+        <li><a href="https://www.instagram.com/laniloud/" target="_blank" rel="me noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"></use></svg></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contacts">
+      <h2 class="section-title">Контакты для редакторов / лейблов</h2>
+      <ul class="contact-list">
+        <li><a href="mailto:veabnelitr@gmail.com">veabnelitr@gmail.com</a></li>
+        <li><a href="https://t.me/laniloud_tg" target="_blank" rel="noopener">Telegram: @laniloud_tg</a></li>
+      </ul>
+      <a class="btn btn-ghost" href="mailto:veabnelitr@gmail.com?subject=%D0%A1%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE">
+        Сотрудничество <svg class="ico ico-arrow"><use href="#i-arrow"></use></svg>
+      </a>
+      <div class="footer-skeleton">
+        <svg aria-hidden="true"><use href="#i-skeleton"></use></svg>
+        <p class="script-line">Для<br>злости<br>и лести.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p>© LANI LOUD, <span data-year>2026</span></p>
+    <p>Все права защищены</p>
+  </div>
+</footer>
+
+<!-- ============ МОДАЛКА «ГДЕ СЛУШАТЬ» ============ -->
+<div class="modal" id="listen-modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="listen-title">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">
+      <svg class="ico"><use href="#i-close"></use></svg>
+    </button>
+    <img class="modal-cover" id="listen-cover" src="assets/img/cover-01.jpg" alt="" width="760" height="760">
+    <div class="modal-body">
+      <h2 class="modal-title" id="listen-title">17</h2>
+      <p class="modal-meta" id="listen-meta">2:14 · Сингл / 2026</p>
+      <ul class="platform-list" id="listen-platforms"></ul>
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "LANI LOUD",
+  "genre": ["Rap", "Rock", "Alternative"],
+  "email": "veabnelitr@gmail.com",
+  "url": "https://laniloud.com/",
+  "image": "https://laniloud.com/assets/img/og-image.jpg",
+  "logo": "https://laniloud.com/assets/img/logo.png",
+  "sameAs": [
+    "https://vk.ru/laniloud",
+    "https://t.me/laniloud_tg",
+    "https://www.youtube.com/@laniloud",
+    "https://www.instagram.com/laniloud/",
+    "https://open.spotify.com/artist/3pFcnRwkA7zcBAzo29UafF",
+    "https://music.apple.com/us/artist/lani-loud/1695722357",
+    "https://music.yandex.ru/artist/6034328"
+  ],
+  "album": [
+    {
+      "@type": "MusicAlbum",
+      "name": "17",
+      "datePublished": "2026-08-30",
+      "sameAs": [
+        "https://open.spotify.com/album/0VfAzkrqRdvfRVneUWTE5M",
+        "https://music.apple.com/us/album/17-single/6808683986",
+        "https://music.yandex.ru/album/26507049",
+        "https://band.link/PPYpE"
+      ]
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "Я улетаю",
+      "datePublished": "2024-08-09",
+      "sameAs": [
+        "https://open.spotify.com/album/6SXzouhXE7NWZcPvRJ8Y31",
+        "https://music.apple.com/ru/album/%D1%8F-%D1%83%D0%BB%D0%B5%D1%82%D0%B0%D1%8E-single/1759431366",
+        "https://music.yandex.ru/album/32512436",
+        "https://band.link/sen8W"
+      ]
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "Свет пронести",
+      "datePublished": "2025-05-16",
+      "sameAs": [
+        "https://open.spotify.com/album/0Anfx8wPIja5qrxSFHohI1",
+        "https://music.apple.com/us/album/%D1%81%D0%B2%D0%B5%D1%82-%D0%BF%D1%80%D0%BE%D0%BD%D0%B5%D1%81%D1%82%D0%B8-single/1811153710",
+        "https://music.yandex.ru/album/36456943",
+        "https://band.link/nLfDr"
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

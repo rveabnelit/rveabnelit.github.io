@@ -1,0 +1,14 @@
+# Служебное — в репозиторий и на GitHub Pages не нужно.
+# В репозиторий попадает только сам сайт: index.html, css, js, assets,
+# favicon.svg, robots.txt, sitemap.xml, README.md.
+
+/design/
+/dist/
+/lani-loud-site.zip
+/_*.html
+/_*.png
+
+# системное
+Thumbs.db
+.DS_Store
+desktop.ini
