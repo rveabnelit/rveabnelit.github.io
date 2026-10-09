@@ -210,7 +210,58 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- 7. Текущий год в подвале ---------- */
+  /* ---------- 7. Почта: копирование адреса по клику ----------
+     Ссылка mailto: открывает почтовую программу, но если она в системе
+     не настроена, браузер молча ничего не делает — посетитель решает,
+     что кнопка не работает. Поэтому адрес дополнительно копируется
+     в буфер, а на экране появляется подтверждение. */
+  var toast = null;
+  var toastTimer = null;
+
+  function fallbackCopy(text) {
+    var ta = doc.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;left:-9999px;top:0;opacity:0';
+    doc.body.appendChild(ta);
+    ta.select();
+    try { doc.execCommand('copy'); } catch (err) {}
+    doc.body.removeChild(ta);
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text)['catch'](function () { fallbackCopy(text); });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+  function showToast(html) {
+    if (!toast) {
+      toast = doc.createElement('div');
+      toast.className = 'toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      doc.body.appendChild(toast);
+    }
+    toast.innerHTML = html;
+    /* перезапускаем анимацию, если тост уже был показан */
+    void toast.offsetWidth;
+    toast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 4200);
+  }
+
+  doc.addEventListener('click', function (e) {
+    var link = e.target && e.target.closest ? e.target.closest('a[href^="mailto:"]') : null;
+    if (!link) return;
+    var address = link.getAttribute('href').replace(/^mailto:/i, '').split('?')[0];
+    copyText(address);
+    showToast('Адрес скопирован: <b>' + address + '</b><br>Открываем почтовую программу…');
+  });
+
+  /* ---------- 8. Текущий год в подвале ---------- */
   doc.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });

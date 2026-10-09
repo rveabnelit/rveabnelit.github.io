@@ -541,6 +541,22 @@ a.platform-link:hover { border-color: var(--ember); color: #fff; background: rgb
 }
 .modal-close:hover { color: #fff; transform: rotate(90deg); }
 
+/* ---------- 14b. Подтверждение действия (копирование адреса) ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: clamp(20px, 3vw, 38px); z-index: 140;
+  transform: translate(-50%, 14px);
+  max-width: min(92vw, 480px); padding: 14px 22px;
+  border: 1px solid var(--line-strong); background: rgba(16, 16, 16, .97);
+  color: var(--text-soft); font-size: 12.5px; line-height: 1.5; letter-spacing: .02em;
+  text-align: center; opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease), transform .3s var(--ease), visibility .3s;
+}
+.toast.is-visible { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.toast b { font-weight: 400; color: var(--ember); }
+@media (prefers-reduced-motion: reduce) {
+  .toast { transition: none; }
+}
+
 /* ---------- 15. Появление при скролле ---------- */
 .js .reveal { opacity: 0; transform: translateY(14px); }
 .js .reveal.is-visible { opacity: 1; transform: none; transition: opacity .7s var(--ease), transform .7s var(--ease); }
