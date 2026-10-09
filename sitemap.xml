@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Замените laniloud.com на ваш домен после покупки -->
+<!-- Замените laniloud.ru на ваш домен после покупки -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://laniloud.com/</loc>
+    <loc>https://laniloud.ru/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
