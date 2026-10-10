@@ -1,7 +1,9 @@
 # LANI LOUD — сайт музыкального проекта
 
-**Сайт опубликован:** https://rveabnelit.github.io/
-**Репозиторий:** https://github.com/rveabnelit/rveabnelit.github.io (публичный, GitHub Pages, HTTPS автоматически)
+**Сайт:** https://laniloud.ru/ — свой домен, HTTPS с сертификатом Let's Encrypt (продлевается автоматически)
+**Хостинг:** Netlify, проект `cheery-banoffee-e15b10` — деплой автоматически из репозитория при каждом пуше
+**Репозиторий:** https://github.com/rveabnelit/rveabnelit.github.io (публичный, история версий)
+**Запасные адреса:** https://cheery-banoffee-e15b10.netlify.app/ и https://rveabnelit.github.io/ (редиректит на домен)
 
 Обновление сайта после правок — одной командой:
 
@@ -9,7 +11,14 @@
 python design\publish.py "что поменял"
 ```
 
-Скрипт пересоберёт архив, закоммитит изменения и отправит на GitHub. Через минуту-две правки появятся на сайте.
+Скрипт пересоберёт архив, закоммитит изменения и отправит на GitHub. Netlify сам
+подхватит пуш и обновит сайт за минуту — вручную ничего загружать не нужно.
+
+Как это устроено:
+
+```
+правка файлов → publish.py → GitHub (репозиторий) → Netlify (сборка и раздача) → laniloud.ru
+```
 
 ---
 
@@ -112,17 +121,33 @@ python design\set_domain.py laniloud.ru   # подставляет ваш дом
 
 ---
 
-## 6. Как выложить
+## 6. Хостинг и домен
 
-**Сайт уже выложен на GitHub Pages** — см. шапку файла. Дальше обновления идут через `python design\publish.py "описание правок"`.
+**Как сейчас устроено:**
 
-Если позже понадобится переехать на свой хостинг или поднять копию:
+| Что | Где |
+|---|---|
+| Домен | `laniloud.ru`, куплен на reg.ru (продление — авто) |
+| DNS | серверы reg.ru, зона редактируется в панели reg.ru |
+| Раздача сайта | Netlify, проект `cheery-banoffee-e15b10` |
+| Сертификат | Let's Encrypt от Netlify, выпускается и продлевается сам |
+| Исходники и история | репозиторий на GitHub |
 
-1. **Свой домен к этому же репозиторию** — в настройках репозитория Pages → Custom domain, у регистратора прописать CNAME на `rveabnelit.github.io`. Сайт остаётся на GitHub, но открывается по вашему адресу.
-2. **Netlify Drop** — перетащите папку `dist` на https://app.netlify.com/drop.
-2. **Vercel** — `vercel` из папки проекта.
-3. **GitHub Pages** — Settings → Pages → Deploy from branch → `main` / `root`.
-4. **Обычный хостинг (FTP/cPanel)** — залейте содержимое папки в `public_html`.
+DNS-записи для домена (для справки):
+
+| Тип | Поддомен | Значение |
+|---|---|---|
+| A | `@` | `75.2.60.5` — сервер Netlify |
+| CNAME | `www` | `cheery-banoffee-e15b10.netlify.app` |
+| MX | `@` | `emx.mail.ru` (10) — почта |
+| TXT | `@` | `v=spf1 redirect=_spf.mail.ru` |
+
+**Если понадобится переехать ещё раз** — сайт статический, папка `dist` кладётся на любой хостинг:
+
+1. **Netlify** — деплой из репозитория (как сейчас) или перетаскиванием папки `dist`
+2. **Vercel** — `vercel` из папки проекта
+3. **GitHub Pages** — Settings → Pages → Deploy from branch → `main` / `root`
+4. **Обычный хостинг (FTP/cPanel)** — залейте содержимое папки `dist` в `public_html`
 
 Перед заливкой можно удалить `design/` и `README.md` — сайту они не нужны.
 
