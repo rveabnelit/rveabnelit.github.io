@@ -647,3 +647,93 @@ a.platform-link:hover { border-color: var(--ember); color: #fff; background: rgb
   .js .reveal { opacity: 1; transform: none; }
   .hero-video { display: none; }                 /* вместо видео — постер */
 }
+
+/* ---------- 18. Страница пресс-релиза (press/avgust.html) ---------- */
+.release { padding-top: clamp(22px, 3vw, 38px); padding-bottom: clamp(50px, 7vw, 90px); }
+.release-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding-bottom: clamp(18px, 2.4vw, 28px); border-bottom: 1px solid var(--line);
+}
+.release-top img { width: clamp(88px, 9vw, 120px); height: auto; opacity: .92; }
+.release-back {
+  font-family: var(--font-display); font-size: 11px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-muted);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: color .3s var(--ease);
+}
+.release-back:hover { color: var(--text); }
+
+.release-hero {
+  display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+  gap: clamp(22px, 4vw, 54px); align-items: start;
+  margin-top: clamp(26px, 4vw, 46px);
+}
+.release-cover { width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface); }
+.release-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.release-kicker {
+  font-family: var(--font-display); font-size: 11px; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--cool);
+}
+.release-title {
+  font-family: var(--font-display); font-weight: 300; text-transform: uppercase;
+  font-size: clamp(30px, 4.6vw, 58px); line-height: .96; letter-spacing: .05em;
+  margin: 10px 0 14px;
+}
+.release-meta {
+  font-family: var(--font-display); font-size: 11.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--text-muted);
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+}
+.release-meta span { display: inline-flex; align-items: center; gap: 10px; }
+.release-meta span + span::before { content: "·"; color: var(--line-strong); }
+.release-lead {
+  margin-top: clamp(16px, 2vw, 22px);
+  font-size: clamp(14.5px, 1.15vw, 16.5px); line-height: 1.72;
+  color: var(--text-soft); max-width: 60ch;
+}
+.release-lead b { font-weight: 400; color: var(--text); }
+
+.release-body { display: grid; gap: clamp(26px, 3.4vw, 42px); margin-top: clamp(34px, 5vw, 62px); }
+.release-section { display: grid; gap: 14px; }
+.release-h2 {
+  font-family: var(--font-display); font-weight: 300; text-transform: uppercase;
+  font-size: clamp(12px, 1.1vw, 13.5px); letter-spacing: .18em; color: var(--text-dim);
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.release-text { font-size: 15px; line-height: 1.78; color: var(--text-soft); max-width: 70ch; }
+.release-text + .release-text { margin-top: 0; }
+
+.release-specs {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px; background: var(--line); border: 1px solid var(--line);
+}
+.release-spec { padding: 15px 18px; background: var(--bg); }
+.release-spec dt {
+  font-family: var(--font-display); font-size: 9.5px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px;
+}
+.release-spec dd { font-size: 13.5px; color: var(--text); line-height: 1.5; }
+
+.lyrics { border-left: 1px solid var(--line-strong); padding-left: clamp(16px, 2vw, 26px); display: grid; gap: 20px; }
+.lyrics-part b {
+  display: block; font-family: var(--font-display); font-weight: 300;
+  font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ember); margin-bottom: 7px;
+}
+.lyrics-part p { font-size: 14.5px; line-height: 1.85; color: var(--text-soft); white-space: pre-line; }
+
+.release-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }
+.release-foot {
+  margin-top: clamp(34px, 4vw, 50px); padding-top: clamp(22px, 3vw, 30px);
+  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 16px 28px; justify-content: space-between;
+  font-size: 12.5px; color: var(--text-muted);
+}
+.release-foot a { color: var(--text-soft); }
+.release-foot a:hover { color: var(--ember); }
+
+@media (max-width: 860px) {
+  .release-hero { grid-template-columns: 1fr; }
+  .release-cover { max-width: 320px; }
+}
+
