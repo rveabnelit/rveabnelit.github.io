@@ -723,6 +723,24 @@ a.platform-link:hover { border-color: var(--ember); color: #fff; background: rgb
 .lyrics-part p { font-size: 14.5px; line-height: 1.85; color: var(--text-soft); white-space: pre-line; }
 
 .release-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: clamp(28px, 4vw, 44px); }
+
+/* сюжеты песни — рисунки в стиле сайта */
+.scenes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(12px, 1.8vw, 20px); }
+.scene {
+  margin: 0; padding: clamp(14px, 1.7vw, 22px);
+  border: 1px solid var(--line); background: rgba(255, 255, 255, .012);
+}
+.scene-art { display: block; width: 100%; height: auto; color: var(--text-soft); }
+.scene figcaption {
+  margin-top: 12px; font-family: var(--font-display); font-size: 10px;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--text-dim); line-height: 1.7;
+}
+.lyrics-out {
+  margin-top: clamp(18px, 2.2vw, 26px);
+  font-family: var(--font-script); font-size: clamp(19px, 2.1vw, 26px);
+  line-height: 1.4; color: var(--ember);
+}
+
 .release-foot {
   margin-top: clamp(34px, 4vw, 50px); padding-top: clamp(22px, 3vw, 30px);
   border-top: 1px solid var(--line);
