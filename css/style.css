@@ -741,6 +741,15 @@ a.platform-link:hover { border-color: var(--ember); color: #fff; background: rgb
   line-height: 1.4; color: var(--ember);
 }
 
+.btn-ember { background: var(--ember); color: #080808; border-color: var(--ember); }
+.btn-ember:hover { background: #e8a45c; color: #080808; transform: translateY(-1px); }
+.btn-lg {
+  padding: clamp(18px, 1.6vw, 22px) clamp(28px, 2.6vw, 42px);
+  font-size: clamp(13px, 1.05vw, 15px);
+  letter-spacing: .18em;
+}
+.presave { margin-top: clamp(20px, 2.6vw, 32px); }
+@media (max-width: 600px) { .presave { width: 100%; } }
 /* ---------- 19. Письмо: рисунки прямо под текстом ---------- */
 .release-band {
   position: relative; overflow: hidden;
