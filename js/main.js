@@ -125,8 +125,10 @@
       modalCover.alt = cover.alt || '';
     }
     modalTitle.textContent = item.getAttribute('data-track') || '';
-    modalMeta.textContent = (item.getAttribute('data-duration') || '') +
-      ' · ' + (item.getAttribute('data-type') || 'Сингл');
+    /* у будущего релиза длительности ещё нет — тогда показываем только тип */
+    var duration = (item.getAttribute('data-duration') || '').trim();
+    var type = item.getAttribute('data-type') || 'Сингл';
+    modalMeta.textContent = duration ? duration + ' · ' + type : type;
     buildPlatforms(item);
     modal.hidden = false;
     doc.body.classList.add('is-locked');
